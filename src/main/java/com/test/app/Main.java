@@ -17,7 +17,7 @@ public class Main {
     public static void main(String[] args) {
 
         Configuration configuration = new Configuration();
-        configuration.configure();
+        configuration.configure().addAnnotatedClass(Task.class);
         serviceRegistry = new StandardServiceRegistryBuilder().applySettings(
                 configuration.getProperties()).build();
         sessionFactory = configuration.buildSessionFactory(serviceRegistry);
